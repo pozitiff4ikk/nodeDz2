@@ -17,7 +17,6 @@ app.engine('.hbs', exprsBars({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-
 const baza = [
     {
         name: "Alesha",
@@ -52,7 +51,8 @@ app.post('/reg',(req,res) => {
 })
 
 app.post('/log', (req, res) => {
-    if(baza.find(elem => elem.name===req.body.name)){
+    let isUser = baza.find(elem => elem.name===req.body.name);
+    if(isUser){
         res.write("welcome!");
     }
     else{
