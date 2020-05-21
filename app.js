@@ -51,7 +51,7 @@ app.post('/reg',(req,res) => {
 })
 
 app.post('/log', (req, res) => {
-    let isUser = baza.find(elem => elem.name===req.body.name);
+    let isUser = baza.find(elem => elem.name===req.body.name && elem.pass===req.body.pass);
     if(isUser){
         res.write("welcome!");
     }
