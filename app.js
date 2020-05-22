@@ -21,12 +21,12 @@ const baza = [
     {
         name: "Alesha",
         login: "some.login@gmail.com",
-        pass: 12345
+        pass: "12345"
     },
     {
         name: "Sanya",
         login: "sanya.luchshiy@gmail.com",
-        pass: 321321
+        pass: "321321"
     }
 ]
 
@@ -52,6 +52,7 @@ app.post('/reg',(req,res) => {
 
 app.post('/log', (req, res) => {
     let isUser = baza.find(elem => elem.name===req.body.name && elem.pass===req.body.pass);
+    console.log(typeof (req.body.pass));
     if(isUser){
         res.write("welcome!");
     }
