@@ -1,0 +1,1 @@
+module.exports.isProductValid = require('./product')
